@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Миний Хайртдаа Зохиосон Цэцэгс 💙</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Цас хаях эффект хэсэг -->
+  <div class="snow-container"></div>
+  <!-- Баруун дээд булангийн аялгууны товч -->
+  <button id="musicToggle" class="music-pill-btn">
+    <span class="heart-icon">💖</span> <span id="musicText">Аялгуу эгшиглэж байна</span>
+  </button>
+
+  <audio id="bgMusic" loop>
+    <source src="Glenn_Madeiro_-_Nothing_s_Gonna_Change_My_Love_For_You_(mp3.pm).mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="main-wrapper">
+    <!-- Дээд хэсгийн Badge -->
+    <div class="top-badge">
+      5700км-ийн зайнаас миний сэтгэл чамд хүрээсэй гэж хүсэж байна. 💕🙈
+    </div>
+
+    <!-- Автоматаар хөдөлдөг гарчиг -->
+    <h1 class="main-title">
+     Хосгүй эрхэм найз охиндоо <span class="title-heart">💙</span>
+    </h1>
+
+    <p class="sub-instruction">
+      <i>Дэлгэц дээр хаана ч хамаагүй дараарай, юу гарч ирэхийг би ч таашгүй!</i>
+    </p>
+
+    <!-- Төвд байрлах том цэнхэр алтанзул цэцэг -->
+    <div class="tulip-stage" id="mainTulipStage">
+      <svg class="main-tulip-svg" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="blueGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.9"/>
+            <stop offset="60%" stop-color="#2563eb" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0"/>
+          </radialGradient>
+          
+          <linearGradient id="petalGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#93c5fd" />
+            <stop offset="100%" stop-color="#1d4ed8" />
+          </linearGradient>
+
+          <linearGradient id="petalGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#60a5fa" />
+            <stop offset="100%" stop-color="#1e40af" />
+          </linearGradient>
+        </defs>
+
+        <!-- Арын анивчих цэнхэр гэрэл -->
+        <circle cx="100" cy="80" r="70" fill="url(#blueGlow)" class="glow-pulse" />
+
+        <!-- Ногоон иш ба навч -->
+        <path d="M100 130 Q98 180 100 220" stroke="#22c55e" stroke-width="6" stroke-linecap="round" fill="none"/>
+        <path d="M100 180 Q60 160 35 150 Q75 190 100 200 Z" fill="#16a34a"/>
+        <path d="M100 170 Q140 150 165 140 Q125 180 100 190 Z" fill="#15803d"/>
+
+        <!-- Зүүн талын жижиг нахиа -->
+        <g class="small-bud" transform="translate(-20, 20)">
+          <path d="M70 120 C50 100 50 80 65 70 C80 80 80 100 70 120 Z" fill="url(#petalGrad1)" />
+          <path d="M65 125 Q63 150 65 160" stroke="#22c55e" stroke-width="3" fill="none"/>
+        </g>
+
+        <!-- Алтанзул цэцгийн том цэнхэр дэлбээнүүд -->
+        <g class="main-flower-petals">
+          <path d="M65 85 C45 40 80 20 100 60 C80 90 70 95 65 85 Z" fill="url(#petalGrad2)" />
+          <path d="M135 85 C155 40 120 20 100 60 C120 90 130 95 135 85 Z" fill="url(#petalGrad2)" />
+          <path d="M70 90 C60 40 100 25 100 75 C100 25 140 40 130 90 C110 125 90 125 70 90 Z" fill="url(#petalGrad1)" />
+        </g>
+      </svg>
+
+      <div class="tap-hint">👆 Цэцэг дээр товшъё!</div>
+    </div>
+
+    <!-- Доод талын зүрхэн карт -->
+    <div class="quote-card">
+      <p id="quoteText">Чамтай өнгөрүүлсэн хором бүр миний хувь эрдэнэ 💎</p>
+    </div>
+
+    <!-- Захиа нээх товчлуур -->
+    <button id="letterBtn" class="letter-trigger-btn">
+      Чамдаа бичсэн захидал 💌
+    </button>
+  </div>
+
+  <!-- Захидлын Popup цонх -->
+  <div id="letterModal" class="modal-overlay">
+    <div class="modal-card">
+      <span id="closeModalBtn" class="close-card-btn">&times;</span>
+      <h2 class="modal-title">Миний Лавандаа 💙</h2>
+      <div class="modal-body">
+        <p></p>
+        <p>I want to write about you,
+            But don't have the right words to describe you.
+            So I kept on reading a lot, From the books in my cupboard.
+            To find the words that I can't spell,
+            The feelings that I can't tell.
+            I took a pen and paper, sat down at my table, Could not move my hand, like I was disable.
+            I went to different places,
+            Found nothing, only met disgraces.
+            I listened to music too, Still do not have any clue.
+            Of the words, I want to write for you, That will reveal, what I feel for you.
+            Then I asked "myself", in a quiet delf, Where love and memories dwell.
+            It said to me "sk your heart",
+            "I" knows everything about her, that you could have thought, Then I asked to my heart "what should I write about her",
+            Which will make my soul feel better.
+            "It" whispers in my ear, write "I love you" dear.
+            Sweet sentiment so sincere,
+            In my heart now it's crystal clear.
+            Fin›lly I write, "I love you" more, You're my everything, I'm that sure.
+            Nothing more to write about you, Only these three words that I knew.
+            I'm not a poet, I'm just a lover,
+            If you know it,
+            Only love you will discover..</p>
+        <p class="modal-footer-text">Зөндөө их хайртай шүү! ❤️</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

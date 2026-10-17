@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(180deg, #0d1117 0%, #161b22 40%, #1f1a3a 100%);
+  min-height: 100vh;
+  color: #ffffff;
+  font-family: 'Comfortaa', 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.main-wrapper {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Баруун дээд булангийн аялгууны товч */
+.music-pill-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  padding: 8px 18px;
+  border-radius: 30px;
+  color: #e2e8f0;
+  font-size: 0.85rem;
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.music-pill-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Дээд хэсгийн Badge */
+.top-badge {
+  background: rgba(147, 197, 253, 0.15);
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  color: #93c5fd;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+/* Автоматаар хөдөлдөг гарчиг */
+.main-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #bfdbfe;
+  text-shadow: 0 0 20px rgba(96, 165, 250, 0.6);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  animation: floatTitle 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatTitle {
+  0% {
+    transform: translateY(0px) scale(1);
+    text-shadow: 0 0 20px rgba(96, 165, 250, 0.6);
+  }
+  100% {
+    transform: translateY(-8px) scale(1.03);
+    text-shadow: 0 0 30px rgba(96, 165, 250, 0.9), 0 0 40px rgba(147, 197, 253, 0.8);
+  }
+}
+
+.title-heart {
+  font-size: 2.2rem;
+  filter: drop-shadow(0 0 10px #3b82f6);
+}
+
+.sub-instruction {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+/* Цэцгийн тайз */
+.tulip-stage {
+  position: relative;
+  margin: 10px 0 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-tulip-svg {
+  width: 210px;
+  height: 250px;
+  filter: drop-shadow(0 10px 20px rgba(37, 99, 235, 0.4));
+  transition: transform 0.3s ease;
+}
+
+.main-tulip-svg:hover {
+  transform: scale(1.05);
+}
+
+.glow-pulse {
+  animation: pulseGlow 3s infinite alternate ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% { r: 50px; opacity: 0.5; }
+  100% { r: 80px; opacity: 0.9; }
+}
+
+.tap-hint {
+  font-size: 0.8rem;
+  color: #93c5fd;
+  background: rgba(15, 23, 42, 0.6);
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-top: 5px;
+  border: 1px solid rgba(147, 197, 253, 0.2);
+}
+
+/* Доод талын карт */
+.quote-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 18px 20px;
+  margin-top: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.quote-card p {
+  font-size: 1.15rem;
+  color: #f1f5f9;
+  line-height: 1.5;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Захианы товчлуур */
+.letter-trigger-btn {
+  margin-top: 15px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.letter-trigger-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(96, 165, 250, 0.8);
+}
+
+/* Захидлын Popup цонх */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(13, 17, 23, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-card {
+  background: linear-gradient(135deg, #161b22, #1f1a3a);
+  border: 1.5px solid #60a5fa;
+  padding: 30px;
+  border-radius: 24px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+  position: relative;
+  text-align: center;
+  color: #e2e8f0;
+}
+
+.close-card-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 26px;
+  color: #93c5fd;
+  cursor: pointer;
+}
+
+.close-card-btn:hover {
+  color: #fff;
+}
+
+.modal-title {
+  color: #bfdbfe;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.modal-body p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.modal-footer-text {
+  font-weight: bold;
+  color: #60a5fa;
+  margin-top: 15px;
+}
+
+/* Дэлгэц дээр хөвөх цэнхэр алтанзул + бичвэрийн загвар */
+.floating-element {
+  position: absolute;
+  pointer-events: none;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.85);
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+  color: #e0f2fe;
+  font-size: 0.9rem;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+  animation: floatAndFade 3.2s ease-out forwards;
+}
+
+@keyframes floatAndFade {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(0.6) rotate(0deg);
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-130px) scale(1.2) rotate(10deg);
+  }
+}
+/* Цас хаялах эффект загвар */
+.snow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1; /* Арын дэвсгэр дээр, бичвэрийн доор байрлана */
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: fallSnow linear infinite;
+}
+
+@keyframes fallSnow {
+  0% {
+    transform: translateY(-10px) translateX(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(105vh) translateX(20px);
+    opacity: 0.2;
+  }
+}
